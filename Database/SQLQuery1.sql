@@ -1,1 +1,1 @@
-﻿CREATE DATABASE InventarioDB;
+﻿SELECT * FROM InventarioDB;

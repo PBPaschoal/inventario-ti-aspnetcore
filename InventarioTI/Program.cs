@@ -1,4 +1,4 @@
-var builder = WebApplication.CreateBuilder(args);
+/*var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorPages();
@@ -21,5 +21,19 @@ app.UseRouting();
 app.UseAuthorization();
 
 app.MapRazorPages();
+
+app.Run();*/
+
+using InventarioTI.Data;
+using InventarioTI.Data.InventarioTI.Data;
+using Microsoft.EntityFrameworkCore;
+
+var builder = WebApplication.CreateBuilder(args);
+
+// Configurar o banco de dados SQL Server
+builder.Services.AddDbContext<AppDbContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+
+var app = builder.Build();
 
 app.Run();
